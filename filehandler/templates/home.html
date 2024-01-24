@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!-- when you are finished setting the files uploading on admin side, add this code 
+to display images from the database/admin when in form or list or single your choice-->
+<div>
+
+    {% for profile_item in profile_queryset %}
+    <h2>{{ profile_item.name }}</h2>
+    <img width="200" src="media/{{profile_item.profileFile}}" alt="{{ profile_item.name }} ">
+    <!-- Other fields... -->
+{% endfor %}
+</div>
+{% endblock content %}
+
+
